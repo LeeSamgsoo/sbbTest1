@@ -7,16 +7,16 @@
     <title>Title</title>
 </head>
 <body>
-<table class="table">
-    <thead class="table-dark"><tr>
-        <td>번호</td><td>제목</td><td>작성일시</td>
-    </tr></thead>
-    <tbody><tr th:each="article, loop : ${articleList}">
-        <td th:text="${loop.count}"></td>
-        <td><a th:text="${article.title}" th:href="@{|/article/detail/${article.id}|}"></a></td>
-        <td th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></td>
-    </tr></tbody>
-</table>
-<a th:href="@{/article/create}">Article 등록하기</a>
+<div class="container my-3">
+    <h2>Article 등록</h2>
+    <form th:action="@{/article/create}" method="post" class="form">
+        <label>제목</label>
+        <input type="text" name="title" id="title"><br>
+        <label>내용</label>
+        <textarea name="content" id="content" rows="10"></textarea><br>
+        <input type="submit" class="button" value="등록하기">
+    </form>
+</div>
+
 </body>
 </html>
