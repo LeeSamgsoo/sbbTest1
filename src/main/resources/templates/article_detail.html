@@ -12,6 +12,7 @@
     <div class="container">
         <p th:text="${article.content}"></p>
     </div>
+    <p th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></p>
     <a th:href="@{/article/list}">Article 목록</a>
 </div>
 </body>
