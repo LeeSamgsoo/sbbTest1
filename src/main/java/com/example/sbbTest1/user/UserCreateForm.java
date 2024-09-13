@@ -19,7 +19,6 @@ public class UserCreateForm {
     @NotEmpty(message = "비밀번호 확인이 비어있습니다.")
     private String passwordCheck;
 
-    @NotEmpty(message = "이메일이 비어있습니다.")
-    @Email
-    private String email;
+    @NotEmpty(message = "닉네임이 비어있습니다.")
+    private String nickname;
 }

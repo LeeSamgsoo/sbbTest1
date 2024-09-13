@@ -20,8 +20,7 @@ public class SiteUser {
 
     private String password;
 
-    @Column(unique = true)
-    private String email;
+    private String nickname;
 
     @OneToMany(mappedBy = "writer", cascade = CascadeType.REMOVE)
     private List<Article> articles;
