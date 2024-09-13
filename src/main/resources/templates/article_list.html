@@ -16,6 +16,7 @@
         </tr>
         </tbody>
     </table>
-    <a th:href="@{/article/create}">Article 등록하기</a>
+    <a class="btn btn-primary" sec:authorize="isAuthenticated()" th:href="@{/article/create}">Article 등록하기</a>
+    <a class="btn btn-primary" sec:authorize="isAnonymous()" th:href="@{/user/login}">Article 등록하기</a>
 </div>
 </html>

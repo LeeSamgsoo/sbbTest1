@@ -1,12 +1,17 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content">
-    <div class="container my-3">
-        <h2 th:text="${article.title}"></h2>
-        <div class="container">
-            <p th:text="${article.content}"></p>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title" th:text="${article.title}"></h5>
         </div>
-        <p th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></p>
-        <a th:href="@{/article/list}">Article 목록</a>
+        <div class="card-body">
+            <p class="card-text" th:text="${article.content}"></p>
+            <span class="badge text-bg-light">
+                <p th:if="${article.writer != null}" th:text="${article.writer.nickname}"></p>
+                <p th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></p>
+            </span>
+        </div>
     </div>
+    <a th:href="@{/article/list}" class="btn btn-primary">Article 목록</a>
 </div>
 </html>
