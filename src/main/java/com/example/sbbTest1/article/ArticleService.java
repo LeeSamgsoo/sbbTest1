@@ -30,4 +30,11 @@ public class ArticleService {
         article.setWriter(user);
         this.articleRepository.save(article);
     }
+
+    public void modify(String title, String content, Article article) {
+        article.setTitle(title);
+        article.setContent(content);
+        article.setModifyDate(LocalDateTime.now());
+        this.articleRepository.save(article);
+    }
 }
