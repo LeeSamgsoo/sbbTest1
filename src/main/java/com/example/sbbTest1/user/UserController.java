@@ -1,6 +1,7 @@
 package com.example.sbbTest1.user;
 
 import jakarta.validation.Valid;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -38,5 +39,10 @@ public class UserController {
             return "signup_form";
         }
         return "redirect:/article/list";
+    }
+
+    @GetMapping("/login")
+    public String userLogin() {
+        return "login_form";
     }
 }
